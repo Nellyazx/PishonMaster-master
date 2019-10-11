@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="transparentColorPrimary">#29597b</color>
+    <color name="transparentColorAccent">#c25b69</color>
+    <color name="colorAccentDark">#870c1c</color>
+
+    <color name="colorSlide_1">#009688</color>
+    <color name="colorSlide_2">#795548</color>
+    <color name="colorSlide_3">#8bc34a</color>
+    <color name="colorSlide_4">#3f51b5</color>
+
+    <color name="active_dots">#F31D2C</color>
+    <color name="inactive_dots">#83878b</color>
+
+
+    <string name="slide_1_title">Predict</string>
+    <string name="slide_1_desc">Have trouble predicting stock prices</string>
+
+    <string name="slide_2_title">Buy</string>
+    <string name="slide_2_desc">Worry no More...Just Buy</string>
+
+    <string name="slide_3_title">Sell</string>
+    <string name="slide_3_desc">When the prices are at peak </string>
+
+    <string name="slide_4_title">Delivered</string>
+    <string name="slide_4_desc">At Your Door Step</string>
+
+    <string name="my_preference">Slide</string>
+    <string name="my_preference_key">LoadSlide</string>
+
+    <!--<color name="colorPrimaryDark">#893810</color>-->
+    <color name="ButtonColor">#7cb1130b</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <!--Adding Pages colour-->
+    <color name="Header">#daf7a00a</color>
+
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#aa000000</color>
+    <color name="dark_gray">#696969</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="background">#EFEFEF</color>
+    <color name="placeholder_grey">#AAADC4</color>
+    <color name="placeholder_grey_20">#33AAADC4</color>
+    <color name="login_background">#eeeeee</color>
+    <color name="gold">#fed700</color>
+    <color name="peach">#ffdab9</color>
+    <color name="black">#000000</color>
+    <color name="red">#ec1b36</color>
+    <color name="red_dark">#ab1b2e</color>
+    <color name="green">#1BAC6E</color>
+    <color name="green_dark">#1b8155</color>
+    <color name="gray">#7c7c7c</color>
+    <color name="transparent_gray">#807c7c7c</color>
+    <color name="maroon">#E8244E</color>
+    <color name="blue">#de5726</color>
+    <color name="blue_dark">#c74c27</color>
+
+    <color name="dark_grey">#484547</color>
+
+    <color name="app_background_color">#60C7C7CC</color>
+    <color name="divider_color">#C7C7CC</color>
+
+    <color name="item_selected_background_color">#C7C7CC</color>
+    <color name="image_placeholder_background_color">#C7C7CC</color>
+
+    <color name="bg_group_item_normal_state">#ffddffdd</color>
+    <color name="bg_group_item_normal_pressed_state">#ff99cc99</color>
+
+    <color name="black_transparent">#14000000</color>
+    <color name="black_transparent_image">#60000000</color>
+    <color name="active_indicator">@android:color/white</color>
+    <color name="inactive_indicator">#4D000000</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_300">#e0e0e0</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="bg">#757575</color>
+    <color name="solid_one">#4abc96</color>
+    <color name="solid_two">#357180</color>
+    <color name="solid_three">#ffce00</color>
+
+    <color name="soft_grey">#e9ebee</color>
+    <color name="soft_green">#a6d785</color>
+    <color name="light_gray">#dbdbdb</color>
+    <color name="semi_gray">#979797</color>
+    <color name="bg_color">#f7f7f7</color>
+    <color name="shadow">#d0d8dc</color>
+    <color name="translucent_white">#88ffffff</color>
+    <color name="fb">#3b5998</color>
+    <color name="google">#d34836</color>
+
+    <color name="red_dark2">#D85A1B</color>
+    <color name="cyan_light">#c9ebee</color>
+    <color name="cyan">#b5e3e7</color>
+    <color name="cyan_dark">#70BDC6</color>
+    <color name="navy_blue">#214258</color>
+    <color name="navy_blue_dark">#1C3A4E</color>
+    <color name="light_green">#78DC96</color>
+    <color name="light_blue">#55C8F0</color>
+    <color name="blue_black_dark">#13171d</color>
+    <color name="blue_black_light">#516179</color>
+    <color name="blue_grey_light">#A5B4C8</color>
+    <color name="orange">#FFA500</color>
+    <color name="orange_dark">#bc7d0b</color>
+    <color name="yellow">#fff44f</color>
+
+
+</resources>

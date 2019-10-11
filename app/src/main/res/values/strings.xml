@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">PishonGroceries</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+
+    <!--Slide One-->
+    <string name="app_title">COUNTERFIGHTERS</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="whatwedo">We Make Sure You Get Authentic Drugs</string>
+    <!--Slide Two-->
+    <string name="genuinedrugs">Fresh And Clean Vegetables</string>
+    <string name="genuinetext">Get Them Clean Not Muddy</string>
+    <!--Slide Three-->
+    <string name="care">Well Packaged</string>
+    <string name="caretext">Not Mixed Up</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Login-->
+
+</resources>

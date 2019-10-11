@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="alien.com.category.AddCategory">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary"
+        app:layout_collapseMode="pin"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/updcategoryName"
+            android:layout_marginLeft="40dp"
+            android:drawableLeft="@drawable/categoryname"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:alpha="0.8"
+            android:maxLines="1"
+            android:inputType="text"
+            android:imeActionLabel="Done"
+            android:imeOptions="actionDone"
+            android:background="@drawable/round_radius"
+            android:textColor="#ffffff"
+            android:drawablePadding="15dp"
+            android:ems="10"
+            android:fontFamily="@font/josefin"
+            android:hint="Enter New Category Name"
+            android:paddingLeft="15dp"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/updaddImage"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/updcategoryName">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/updselectImage"
+                android:fontFamily="@font/josefin"
+                android:layout_marginTop="15dp"
+                android:text="Click Here to Select New Category Image"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:visibility="gone"
+                android:id="@+id/placeholder"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/plus"
+                android:id="@+id/updcatImage"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/updselectImage"
+                />
+        </LinearLayout>
+        <Button
+            android:id="@+id/updaddCat"
+            android:layout_width="226dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/updaddImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/josefin"
+            android:text="Update Category"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</LinearLayout>

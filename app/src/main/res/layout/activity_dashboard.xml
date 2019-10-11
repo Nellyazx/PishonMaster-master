@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/reportDrugs"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:background="@drawable/nicevegetables"
+    tools:context="alien.com.dashboard.Dashboard">
+    <TextView
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/put_quote_here"
+        android:gravity="center"
+        android:padding="48dp"
+        android:background="#ddffffff"
+        />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_marginBottom="34dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="44dp"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="75dp"
+        android:layout_marginLeft="60dp"
+        android:padding="5dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="59dp"
+        android:id="@+id/addcustomer">
+        <ImageView
+            android:id="@+id/AddCustomer"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/adduser"/>
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/AddCustomer"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/josefin"
+            android:layout_centerHorizontal="true"
+            android:text="Add Customers"
+            android:textColor="#F31D2C"
+            android:textSize="15sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/showcustomers"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
+            android:layout_centerInParent="true"
+            android:layout_alignTop="@+id/addcustomer"
+            android:padding="5dp">
+        <ImageView
+            android:id="@+id/ViewCustomer"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+          app:srcCompat="@drawable/viewuser" />
+        <TextView
+            android:id="@+id/viewcust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+          android:layout_below="@+id/ViewCustomer"
+            android:fontFamily="@font/josefin"
+            android:text="View Customers"
+            android:textColor="#F31D2C"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="75dp"
+            android:layout_marginLeft="60dp"
+            android:padding="5dp"
+            android:layout_below="@+id/addcustomer"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/pending">
+        <ImageView
+            android:id="@+id/PendingOrders"
+            android:layout_width="75dp"
+            android:layout_centerInParent="true"
+            android:layout_height="75dp"
+            app:srcCompat="@drawable/pendingorder"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PendingOrders"
+            android:text="Pending Orders"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#F31D2C"
+            android:fontFamily="@font/josefin"
+            android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/pending"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:id="@+id/delivered"
+            android:layout_marginRight="60dp">
+
+            <ImageView
+                android:id="@+id/DeliveredOrders"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/checkout" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DeliveredOrders"
+                android:fontFamily="@font/josefin"
+                android:text="Delivered Orders"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textColor="#F31D2C"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="75dp"
+            android:layout_marginLeft="60dp"
+            android:padding="5dp"
+            android:layout_below="@+id/pending"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/category">
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/addcatImg"
+            android:layout_centerInParent="true"
+            android:src="@drawable/add_category"
+             />
+        <TextView
+            android:id="@+id/addcategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addcatImg"
+            android:fontFamily="@font/josefin"
+            android:text="Add Category"
+            android:layout_marginTop="20dp"
+            android:textColor="#F31D2C"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/category"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:id="@+id/products"
+            android:layout_marginRight="60dp">
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/addprodImg"
+            android:layout_centerInParent="true"
+            android:src="@drawable/addproducts"
+             />
+        <TextView
+            android:id="@+id/addproducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/addprodImg"
+            android:fontFamily="@font/josefin"
+            android:text="Products"
+            android:layout_marginTop="20dp"
+            android:textColor="#F31D2C"
+            android:textSize="15sp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

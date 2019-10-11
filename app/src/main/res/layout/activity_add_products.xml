@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="alien.com.products.AddProducts">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary"
+        app:layout_collapseMode="pin"
+        />
+
+    <ScrollView
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/productName"
+                    android:layout_marginLeft="40dp"
+                    android:drawableLeft="@drawable/categoryname"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:alpha="0.8"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:imeActionLabel="Done"
+                    android:imeOptions="actionDone"
+                    android:background="@drawable/round_radius"
+                    android:textColor="#ffffff"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:fontFamily="@font/josefin"
+                    android:hint="Enter Product Name"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="#ffffff"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/productPrice"
+                    android:layout_marginLeft="40dp"
+                    android:drawableLeft="@drawable/categoryname"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:alpha="0.8"
+                    android:layout_below="@+id/productName"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:imeActionLabel="Done"
+                    android:imeOptions="actionDone"
+                    android:background="@drawable/round_radius"
+                    android:textColor="#ffffff"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:fontFamily="@font/josefin"
+                    android:hint="Enter Product Price"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="#ffffff"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/productQuantity"
+                    android:layout_marginLeft="40dp"
+                    android:drawableLeft="@drawable/categoryname"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:alpha="0.8"
+                    android:maxLines="1"
+                    android:layout_below="@+id/productPrice"
+                    android:inputType="text"
+                    android:imeActionLabel="Done"
+                    android:imeOptions="actionDone"
+                    android:background="@drawable/round_radius"
+                    android:textColor="#ffffff"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:fontFamily="@font/josefin"
+                    android:hint="Enter Product Quantity"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="#ffffff"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnercategories"
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_below="@+id/productQuantity"
+                    android:layout_height="55dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="15dp"
+                    android:fontFamily="@font/josefin" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/spinnercategories">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/selectImage"
+                        android:gravity="center_horizontal"
+                        android:fontFamily="@font/josefin"
+                        android:layout_marginTop="15dp"
+                        android:text="Click Here to Select Product Image"
+                        android:textSize="20sp"
+                        />
+                    <LinearLayout
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/selectImage">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:visibility="gone"
+                            android:id="@+id/placeholder"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            />
+                        <LinearLayout
+                            android:gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:src="@drawable/plus"
+                                    android:id="@+id/productImage"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="30dp"
+                                    android:layout_marginRight="10dp"
+                                    />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    android:layout_margin="5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Gallery"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:src="@drawable/plus"
+                                    android:id="@+id/productcamImage"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="30dp"
+                                    android:layout_marginLeft="10dp"
+                                    />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    android:layout_margin="5dp"
+                                    android:text="Camera"/>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+                <Button
+                    android:id="@+id/addprod"
+                    android:layout_width="226dp"
+                    android:layout_below="@+id/addImage"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/button_round"
+                    android:fontFamily="@font/josefin"
+                    android:text="Add Product"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

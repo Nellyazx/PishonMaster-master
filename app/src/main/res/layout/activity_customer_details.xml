@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginimg"
+    android:alpha="0.8"
+    >
+    <ScrollView
+        android:id="@+id/sw1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/registerTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/semibold"
+                    android:text="Register New Users"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/location"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:alpha="0.8"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:imeActionLabel="Next"
+                    android:imeOptions="actionNext"
+                    android:textColor="#ffffff"
+                    android:drawablePadding="15dp"
+                    android:background="@drawable/round_radius"
+                    android:ems="10"
+                    android:fontFamily="@font/josefin"
+                    android:hint="Location"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="#ffffff"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/famsize"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_centerHorizontal="true"
+                    android:alpha="0.8"
+                    android:maxLines="1"
+                    android:imeActionLabel="Next"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:layout_below="@+id/location"
+                    android:textColor="#ffffff"
+                    android:drawablePadding="15dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/round_radius"
+                    android:ems="10"
+                    android:fontFamily="@font/josefin"
+                    android:hint="Family Size"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="#ffffff"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/famsize"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:alpha="0.8"
+                    android:maxLines="1"
+                    android:inputType="textPassword"
+                    android:imeActionLabel="Next"
+                    android:imeOptions="actionNext"
+                    android:background="@drawable/round_radius"
+                    android:textColor="#ffffff"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:fontFamily="@font/josefin"
+                    android:hint="Password"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="#ffffff"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/confpass"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/password"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:alpha="0.8"
+                    android:imeActionLabel="Next"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:background="@drawable/round_radius"
+                    android:textColor="#ffffff"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:fontFamily="@font/josefin"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="#ffffff"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/charge"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/confpass"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:alpha="0.8"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:imeActionLabel="Done"
+                    android:imeOptions="actionDone"
+                    android:background="@drawable/round_radius"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/josefin"
+                    android:hint="Delivery Fee"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="#ffffff"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/register"
+                    android:layout_width="226dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/charge"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_round"
+                    android:fontFamily="@font/josefin"
+                    android:text="Register"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
