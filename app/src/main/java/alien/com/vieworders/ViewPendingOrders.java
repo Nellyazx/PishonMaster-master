@@ -36,6 +36,7 @@ public class ViewPendingOrders extends AppCompatActivity
     RecyclerView ordersrecyclerView;
     List<OrderInfo> orderInfoList;
     OrdersAdapter ordersAdapter;
+    public static String orderId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,21 +96,18 @@ public class ViewPendingOrders extends AppCompatActivity
                                         jo.getString("price"),
                                         jo.getString("location"),
                                         jo.getString("phonenumber"));
-
+                        orderId = jo.getString("id");
                         orderInfoList.add(orderInfo);
                         ordersswiperefreshlayout.setRefreshing(false);
                         ordersAdapter = new OrdersAdapter(ViewPendingOrders.this, orderInfoList);
                         ordersrecyclerView.setAdapter(ordersAdapter);
                     }
                 }
-
                 catch (JSONException e) {
                     Toast.makeText(ViewPendingOrders.this, "Nothing Found "+e, Toast.LENGTH_SHORT).show();
                     Log.e("Nothing",e.toString());
                     e.printStackTrace();
                 }
-
-
             }
         }, new Response.ErrorListener() {
             @Override

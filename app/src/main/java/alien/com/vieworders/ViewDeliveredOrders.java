@@ -102,14 +102,11 @@ public class ViewDeliveredOrders extends AppCompatActivity {
                         deliveredrecyclerView.setAdapter(deliveredAdapter);
                     }
                 }
-
                 catch (JSONException e) {
                     Toast.makeText(ViewDeliveredOrders.this, "Nothing Found "+e, Toast.LENGTH_SHORT).show();
                     Log.e("Nothing",e.toString());
                     e.printStackTrace();
                 }
-
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -121,9 +118,7 @@ public class ViewDeliveredOrders extends AppCompatActivity {
             }
         });
         AppController.getInstance().addToRequestQueue(stringRequest);
-
-//  AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
-
+        //AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
     
     
