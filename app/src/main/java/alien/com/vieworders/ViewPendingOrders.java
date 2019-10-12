@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -37,10 +38,13 @@ public class ViewPendingOrders extends AppCompatActivity
     List<OrderInfo> orderInfoList;
     OrdersAdapter ordersAdapter;
     public static String orderId;
+    JSONObject jo;
+    TextView noPendingOrders;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pending_orders);
+        noPendingOrders = findViewById(R.id.nopending);
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Pending Orders");
         toolbar.setNavigationIcon(R.drawable.back);
@@ -76,6 +80,7 @@ public class ViewPendingOrders extends AppCompatActivity
         ordersAdapter.clearAdapter();
         getData();
     }
+
     public void getData()
     {
         ordersswiperefreshlayout.setRefreshing(true);
@@ -85,26 +90,28 @@ public class ViewPendingOrders extends AppCompatActivity
             {
                 try {
                     JSONArray ja=new JSONArray(response);
-                    JSONObject jo=null;
+                     jo=null;
                     orderInfoList.clear();
-                    for(int i=0;i<ja.length();i++) {
-                        jo=ja.getJSONObject(i);
-                        OrderInfo orderInfo = new OrderInfo
-                                (jo.getString("username"),
-                                        jo.getString("product_name"),
-                                        jo.getString("variance"),
-                                        jo.getString("price"),
-                                        jo.getString("location"),
-                                        jo.getString("phonenumber"));
-                        orderId = jo.getString("id");
-                        orderInfoList.add(orderInfo);
-                        ordersswiperefreshlayout.setRefreshing(false);
-                        ordersAdapter = new OrdersAdapter(ViewPendingOrders.this, orderInfoList);
-                        ordersrecyclerView.setAdapter(ordersAdapter);
-                    }
+                    for(int i=0;i<ja.length();i++)
+                    {
+                        jo = ja.getJSONObject(i);
+                            OrderInfo orderInfo = new OrderInfo
+                                    (jo.getString("username"),
+                                            jo.getString("product_name"),
+                                            jo.getString("variance"),
+                                            jo.getString("price"),
+                                            jo.getString("location"),
+                                            jo.getString("phonenumber"),
+                                            jo.getString("id"));
+                            orderInfoList.add(orderInfo);
+                            ordersswiperefreshlayout.setRefreshing(false);
+                            ordersAdapter = new OrdersAdapter(ViewPendingOrders.this, orderInfoList);
+                            ordersrecyclerView.setAdapter(ordersAdapter);
+                        }
+
                 }
                 catch (JSONException e) {
-                    Toast.makeText(ViewPendingOrders.this, "Nothing Found "+e, Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(ViewPendingOrders.this, "Nothing Found "+e, Toast.LENGTH_SHORT).show();
                     Log.e("Nothing",e.toString());
                     e.printStackTrace();
                 }

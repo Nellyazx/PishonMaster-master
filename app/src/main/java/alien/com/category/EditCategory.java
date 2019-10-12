@@ -201,7 +201,6 @@ public class EditCategory extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
     }
     public void displayAlert(final String code) {
         alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {

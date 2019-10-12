@@ -54,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/updselectImage"
                 android:fontFamily="@font/josefin"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:text="Click Here to Select New Category Image"
                 android:textSize="20sp" />

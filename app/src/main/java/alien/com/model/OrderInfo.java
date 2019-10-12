@@ -8,9 +8,10 @@ public class OrderInfo
     private String orderprice;
     private String customerlocation;
     private String customerphonenumber;
+    private String orderId;
 
 
-    public OrderInfo(String ordercustname,String orderitem,String orderquantity,String orderprice,String customerlocation,String customerphonenumber)
+    public OrderInfo(String ordercustname,String orderitem,String orderquantity,String orderprice,String customerlocation,String customerphonenumber,String orderId)
     {
         this.ordercustname = ordercustname;
         this.orderitem = orderitem;
@@ -18,11 +19,15 @@ public class OrderInfo
         this.orderprice= orderprice;
         this.customerlocation= customerlocation;
         this.customerphonenumber= customerphonenumber;
-
+        this.orderId= orderId;
     }
     public String getOrdercustname()
     {
         return ordercustname;
+    }
+
+    public String getOrderId() {
+        return orderId;
     }
 
     public String getOrderitem() {

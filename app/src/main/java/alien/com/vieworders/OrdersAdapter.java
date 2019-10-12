@@ -39,6 +39,7 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersView
 {
     public Context context;
     public List<OrderInfo> orderInfos;
+    ProgressDialog progressDialog;
     public OrdersAdapter(Context context,List<OrderInfo> orderInfos)
     {
         this.context = context;
@@ -49,6 +50,7 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersView
     @Override
     public OrdersViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i)
     {
+
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.order,viewGroup,false);
         OrdersViewHolder ordersViewHolder =  new OrdersViewHolder(view);
@@ -56,7 +58,7 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OrdersViewHolder ordersViewHolder, int position)
+    public void onBindViewHolder(@NonNull OrdersViewHolder ordersViewHolder, final int position)
     {
 
         final Context context = ordersViewHolder.itemView.getContext();
@@ -72,13 +74,16 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersView
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(context, " Order Id" +ViewPendingOrders.orderId, Toast.LENGTH_SHORT).show();
+                progressDialog = ProgressDialog.show(context, "", "Changing Status to Delivered.", false, false);
+
+                final String orId = orderInfos.get(position).getOrderId();
+                //Toast.makeText(context, " Order Id" +orderInfos.get(position).getOrderId(), Toast.LENGTH_SHORT).show();
                 StringRequest deliverOrder = new StringRequest(Request.Method.POST, ApiService.MOVE_TO_DELIVER, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response)
                     {
-                        Toast.makeText(context, ""+response, Toast.LENGTH_SHORT).show();
-                            context.startActivity(new Intent(context, Dashboard.class));
+                        progressDialog.dismiss();
+                        context.startActivity(new Intent(context, Dashboard.class));
                     }
                 }, new Response.ErrorListener()
                 {
@@ -86,13 +91,14 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersView
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(context, "SomeErr"+error, Toast.LENGTH_SHORT).show();
                         error.printStackTrace();
+                        progressDialog.dismiss();
                     }
                 })
                 {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String,String> params = new HashMap<>();
-                        params.put("orderid",orderId);
+                        params.put("orderid",orId);
                         return params;
                     }
                 };
@@ -104,42 +110,7 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersView
 
 
     }
-    public String  getId()
-    {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, ApiService.VIEW_ALL_PENDING_ORDERS, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response)
-            {
-                try {
-                    JSONArray ja=new JSONArray(response);
-                    JSONObject jo=null;
-                    for(int i=0;i<ja.length();i++)
-                    {
-                        jo=ja.getJSONObject(i);
-                        orderId = jo.getString("username");
-                        //Toast.makeText(context, "Order Id "+orderId, Toast.LENGTH_SHORT).show();
-                    }
-                }
 
-                catch (JSONException e) {
-                    Toast.makeText(context, "Nothing Found "+e, Toast.LENGTH_SHORT).show();
-                    Log.e("Nothing",e.toString());
-                    e.printStackTrace();
-                }
-
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error)
-            {
-                Toast.makeText(context, ""+error, Toast.LENGTH_SHORT).show();
-                Log.e("RES", String.valueOf(error));
-            }
-        });
-        AppController.getInstance().addToRequestQueue(stringRequest);
-    return orderId;
-    }
     @Override
     public int getItemCount()
     {

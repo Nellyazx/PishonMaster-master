@@ -79,20 +79,23 @@ StringRequest updateRequest;
     }
     public void updateUsers()
     {
+        //Toast.makeText(this, "We are here", Toast.LENGTH_SHORT).show();
         getCustName = name.getText().toString().trim();
         getCustEmail = email.getText().toString().trim();
         getCustLoc = location.getText().toString().trim();
         getCustPhone = phone.getText().toString().trim();
         getCustFamilySize = famsize.getText().toString().trim();
         getCustDelFee = delfee.getText().toString().trim();
-        progressDialog = ProgressDialog.show(UpdateUserInfo.this, "", "Registering..", false, false);
+        progressDialog = ProgressDialog.show(UpdateUserInfo.this, "", "Updating Customer Data..", false, false);
         updateRequest = new StringRequest(Request.Method.POST, ApiService.UPDATE_CUSTOMER_DATA_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response)
             {
+                progressDialog.dismiss();
+
                 Log.e("Update",response);
                 try {
-                    progressDialog.dismiss();
+
                     JSONArray jsonArray = new JSONArray(response);
                     JSONObject jsonObject = jsonArray.getJSONObject(0);
                     String code = jsonObject.getString("code");
@@ -101,8 +104,9 @@ StringRequest updateRequest;
                     alertDialog.setMessage(message);
                     displayAlert(code);
                     startActivity(new Intent(UpdateUserInfo.this, Dashboard.class));
-
                 } catch (JSONException e) {
+                    progressDialog.dismiss();
+                    Toast.makeText(UpdateUserInfo.this, " "+e.toString(), Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
             }
